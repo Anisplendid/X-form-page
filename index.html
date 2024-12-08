@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .screen {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 90px;
+  }
+  
+ 
+  </style>
+
+</head>
+<body>
+  <div class="screen">
+    <div class="logo-container">
+        <i class="fab fa-x-twitter"></i>
+    </div>
+  </div>
+
+  <script>
+    // Wait for 20 seconds and then redirect to the login page
+    setTimeout(function() {
+      window.location.href = "login.html"; // Change this to your actual login page URL
+    }, 20000); // 20000 milliseconds = 20 seconds
+  </script>
+</body>
+</html>

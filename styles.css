@@ -1,0 +1,84 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Login Page */
+.login-container, .verification-container {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.cancel-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #111;
+  color: #fff;
+  font-size: 16px;
+}
+
+.next-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1da1f2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.next-button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.forgot-password {
+  color: #1da1f2;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Verification Page */
+.description {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
